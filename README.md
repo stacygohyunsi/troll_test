@@ -7,5 +7,5 @@ For information on how to setup a telegram bot:
 https://core.telegram.org/bots
 
 # Wish List
-*Reminders to be stored in easily accessible places e.g. Google Drive, Google Sheets
-*Customizable Motivational Message
+* Reminders to be stored in easily accessible places e.g. Google Drive, Google Sheets
+* Customizable Motivational Message
