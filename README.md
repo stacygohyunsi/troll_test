@@ -9,6 +9,12 @@ https://core.telegram.org/bots
 Library used to develop telegram bot:
 https://github.com/Naltox/telegram-node-bot
 
+Just create a telegram bot using telegram botfather, then replace the key in the code and run the js file
+
+node index.js
+
+And you should be able to test the bot by sending a private message to the bot
+
 # Wish List
 * Reminders to be stored in easily accessible places e.g. Google Drive, Google Sheets
 * Customizable Motivational Message
