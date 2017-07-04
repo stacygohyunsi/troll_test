@@ -2,20 +2,12 @@
 
 var count = 0;
 var http = require("http");
-var port = process.env.PORT || 443,
-    host = '0.0.0.0',  // probably this change is not required
 
-const Telegram = require('telegram-node-bot'); //https://github.com/Naltox/telegram-node-bot
+const Telegram = require('telegram-node-bot');
 const TelegramBaseController = Telegram.TelegramBaseController;
 const TextCommand = Telegram.TextCommand;
 const RegexpCommand = Telegram.RegexpCommand;
-const CustomFilterCommand = require('./node_modules/telegram-node-bot/lib/routing/commands/CustomFilterCommand')
 const tg = new Telegram.Telegram('Your Key Here',{
-    workers: 1,
-    webAdmin: {
-        host: host,
-        port: port
-    }
 });
 
 var lastSentDay = (new Date()).getDay();
@@ -168,14 +160,6 @@ tg.router
         new PingController()
     )
     .when(      
-        new CustomFilterCommand($ => { 
-            if($.message.text != undefined && $.message.text.match(/troll/i) && !$.message.text.match(/troll pin/i) && !$.message.text.match(/troll remind/i)){
-                return true;
-            }
-            var caption = $.message.caption;
-            if (caption != undefined && caption.toLowerCase().indexOf("troll") >= 0) {
-                return true;
-            }
-            }, 'pingCommand'),
+        new RegexpCommand(/troll/i, 'pingCommand'),
         new PingController()
     )
