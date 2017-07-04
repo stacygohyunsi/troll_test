@@ -6,6 +6,9 @@ A new intended feature is to use it as a reminder bot where user can pin reminde
 For information on how to setup a telegram bot:
 https://core.telegram.org/bots
 
+Library used to develop telegram bot:
+https://github.com/Naltox/telegram-node-bot
+
 # Wish List
 * Reminders to be stored in easily accessible places e.g. Google Drive, Google Sheets
 * Customizable Motivational Message
