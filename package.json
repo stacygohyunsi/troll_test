@@ -1,0 +1,16 @@
+{
+  "name": "trolltest",
+  "version": "0.0.0",
+  "description": "Troll Test telegram bot",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vincenttbk/troll_test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vincenttbk/troll_test/issues"
+  },
+  "dependencies": {
+    "telegram-node-bot": "^4.0.5"
+  }
+}
