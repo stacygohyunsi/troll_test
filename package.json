@@ -18,5 +18,8 @@
   "homepage": "https://github.com/stacygohyunsi/troll_test#readme",
   "dependencies": {
     "telegram-node-bot": "^4.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0"
   }
 }
