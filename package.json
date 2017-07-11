@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/stacygohyunsi/troll_test#readme",
   "dependencies": {
+    "google-spreadsheet": "^2.0.4",
     "telegram-node-bot": "^4.0.5"
   },
   "devDependencies": {
