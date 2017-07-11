@@ -8,14 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stacygohyunsi/troll_test.git"
+    "url": "git+https://github.com/Vincenttbk/troll_test.git"
   },
   "author": "Stacy Goh <stacy.gohys@gmail.com> (http://imstacy.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stacygohyunsi/troll_test/issues"
+    "url": "https://github.com/Vincenttbk/troll_test/issues"
   },
-  "homepage": "https://github.com/stacygohyunsi/troll_test#readme",
   "dependencies": {
     "google-spreadsheet": "^2.0.4",
     "telegram-node-bot": "^4.0.5"
