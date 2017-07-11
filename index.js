@@ -9,15 +9,14 @@ const announcements = require('./components/Announcements.js').announcements;
 const async = require('async');
 const TelegramBaseController = Telegram.TelegramBaseController;
 const RegexpCommand = Telegram.RegexpCommand;
-const telegramBot = new Telegram.Telegram(Config.telegram);
+const telegramBot = new Telegram.Telegram(Config.telegram, { workers: 1 });
 
 let count = 0;
 
-Reminders.handleAutomaticReminders();
-
-function sendRemind() {
-    remindMessage();
-}
+Reminders.handleAutomaticReminders(function(id, result) {
+    console.log(id, result);
+    telegramBot.api.sendMessage(id, result);
+});
 
 class OtherwiseController extends TelegramBaseController {
     handle($) {
@@ -27,6 +26,7 @@ class OtherwiseController extends TelegramBaseController {
 
 class PingController extends TelegramBaseController {
     pingMessage($) {
+        console.log(count);
         // var randInt = Math.floor(Math.random() * 
         // ((ansArr.length-1) - 0 + 1) + 0);
         let randInt = count += 1;
@@ -58,15 +58,7 @@ class PingController extends TelegramBaseController {
     remindMessage($) {
         let chatGrpReminders = announcements[$.message.chat.id];
         if (chatGrpReminders != undefined && chatGrpReminders.length > 0) {
-            let result = 'Here are the reminders\n';
-            result = result + '=======================\n';
-            for (let i = 0; i < chatGrpReminders.length; i++) {
-                let rawStr = chatGrpReminders[i].message;
-                let stringToAdd = rawStr.substring('troll pin '.length);
-                result += (i+1).toString() + '-' + stringToAdd + '\n';
-            }
-            result = result + '=======================\n';
-            result = result + 'That\'s all folks!';
+            let result = Reminders.generateReminders(chatGrpReminders);
             $.sendMessage(result);
         } else {
             $.sendMessage('No Announcement Yet! Please try later');
@@ -107,6 +99,7 @@ class PingController extends TelegramBaseController {
         }
         $.runForm(form, (result) => {
             Replies.push([result.message]);
+            $.sendMessage('Your message have been added!');
         })
     }
 
