@@ -37,7 +37,7 @@ Shows you a list of whatever you have pinned.
 ## troll create [message]
 Allows you to create your own motivational message.
 
-## troll store [reminder]
+## troll store
 Allows you to store your reminders into a Google sheet.
 
 
