@@ -14,7 +14,6 @@ const telegramBot = new Telegram.Telegram(Config.telegram, { workers: 1 });
 let count = 0;
 
 Reminders.handleAutomaticReminders(function(id, result) {
-    console.log(id, result);
     telegramBot.api.sendMessage(id, result);
 });
 
@@ -26,7 +25,6 @@ class OtherwiseController extends TelegramBaseController {
 
 class PingController extends TelegramBaseController {
     pingMessage($) {
-        console.log(count);
         // var randInt = Math.floor(Math.random() * 
         // ((ansArr.length-1) - 0 + 1) + 0);
         let randInt = count += 1;
@@ -132,7 +130,7 @@ telegramBot.router
         new PingController()
     )
     .when(
-        new RegexpCommand(/troll/i, 'pingCommand'),
+        new RegexpCommand((/troll/i), 'pingCommand'),
         new PingController()
     )
     .otherwise(new OtherwiseController())
