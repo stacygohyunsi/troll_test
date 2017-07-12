@@ -22,7 +22,7 @@ const Store = {
       'return-empty': true
     }, function(err, cells) {
 			console.log(err);
-			for (var i = 0; i <chatGrpReminders.length; i++) {
+			for (var i = 0; i < chatGrpReminders.length; i++) {
 				let rawStr = chatGrpReminders[i].message
 				cells[i].value = rawStr.substring('troll pin '.length);
 			}
