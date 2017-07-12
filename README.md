@@ -34,8 +34,10 @@ Allows you to pin a reminder for reference later.
 ## troll remind
 Shows you a list of whatever you have pinned.
 
-## troll create [message]
+## troll create
 Allows you to create your own motivational message.
+
+After typing `troll create`, you should receive a prompt which says 'Send me a message to be added to your list of motivational messages.'
 
 ## troll store
 Allows you to store your reminders into a Google sheet.
