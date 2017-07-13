@@ -34,9 +34,4 @@ describe('Troll test::Components::Reminders', () => {
 	it('implements .send()', () => {
 		expect(component.send).to.not.be.undefined;
 	});
-
-	it('implements .send()', () => {
-		expect(component.send).to.not.be.undefined;
-	});
-
 })
