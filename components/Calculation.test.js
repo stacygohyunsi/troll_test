@@ -17,4 +17,11 @@ describe('Troll test::Components::Calculation', () => {
 	it('implements .daysBetween()', () => {
 		expect(component.daysBetween).to.not.be.undefined;
 	});
+
+	it('takes in two arguments of dateOne,dateTwo and returns an integer', () => {
+		let dateOne = new Date(2012, 0, 1);
+		let dateTwo = new Date(2012, 0, 2);
+		const daysBetweenResult = component.daysBetween(dateOne, dateTwo);
+		expect(typeof daysBetweenResult).to.be.equal('number');
+	})
 })
